@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="container">
+        <div class="preference-color">
+            <h2>choose your favorite color</h2>
+            <input type="color" class="color favColor" name="favColor" value="#ff99ff"></input>
+        </div>
+
+        <div id="color-options">
+            <!-- Botões de opções de cores -->
+            <h2>Paleta de cores</h2>
+            <button type="button" class="color black" style="background-color: black;"></button>
+            <button type="button" class="color red" style="background-color: red;"></button>
+            <button type="button" class="color green" style="background-color: green;"></button>
+            <button type="button" class="color blue" style="background-color: blue;"></button>
+            <button type="button" class="color yellow" style="background-color: rgb(201, 201, 20);"></button>
+            <button type="button" class="color white" style="background-color: white;"></button>
+        </div>
+
+        <!-- Cor selecionada pelo usuário -->
+        <div id="current-brush-color">
+            <h2>Cor do pincel</h2>
+            <div class="current-color" style="background-color: white;"></div>
+        </div>
+
+        <form id="settings">
+            <h2>Settings</h2>
+            <!-- input que determina a quantidade de pixels -->
+            <label> width-heigt:
+                <input type="number" id="number-width" min="1" max="40" value="30">
+            </label>
+
+            <!-- Botão que adiciona os pixels -->
+            <button type="button" id="add-pixels">Add Pixels</button>
+
+            <!-- botão para limpar os pixels -->
+            <button id="clean-button" type="button">Clean</button>
+        </form>
+        <!-- Local onde os pixels são renderizados -->
+    </div>
+
+    <table>
+        <tbody id="body-pixels">
+        </tbody>
+    </table>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
