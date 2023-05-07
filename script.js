@@ -1,25 +1,19 @@
 let bodyPixels = document.querySelector('#body-pixels')
-let pixelsWidth = document.querySelector('#number-width')
+//let pixelsWidth = document.querySelector('#number-width')
 let addPixels = document.querySelector('#add-pixels')
 let clean = document.querySelector('#clean-button')
 let colors = document.querySelectorAll('.color')
 let currentColor = document.querySelector('.current-color')
 let colorRandom = document.querySelector('.favColor')
 
-let pixelsSize = pixelsWidth.value * 2
-
 //Função que determina a quantidade de pixels:
 const changePixelBodySize = () => {  
-    let size = 0
-    if (pixelsWidth.value == "" || pixelsWidth.value < 5 || pixelsWidth.value > 40){
-        window.alert("O valor da largura precisa ser um número entre 5 e 30!")
-    } else {
-        for (let index = 0; index < pixelsWidth.value; index++) {
+        for (let index = 0; index < 40; index++) {
             let linha = document.createElement('tr');
             linha.classList.add('pixel');
             linha.style.backgroundColor = "white"
             bodyPixels.appendChild(linha)
-            for (let i = 0; i < pixelsWidth.value * 2; i++) {
+            for (let i = 0; i < 40 * 2; i++) {
                 let coluna = document.createElement('td')
                 coluna.classList.add('pixel')
                 coluna.style.backgroundColor = "white"
@@ -27,7 +21,6 @@ const changePixelBodySize = () => {
             }
         }
     }
-}
 
 //Função que limpa os pixels
 const cleanPixels = () => {
@@ -56,6 +49,4 @@ bodyPixels.addEventListener('click', (event) => {
 
 selectColor()
 clean.addEventListener('click', cleanPixels)
-addPixels.addEventListener('click' , changePixelBodySize)
-
-
+window.onload(changePixelBodySize())
